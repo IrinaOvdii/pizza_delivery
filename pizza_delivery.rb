@@ -1,3 +1,8 @@
+require_relative "menu.rb"
+
+menu = Menu.new
+
+
 done = false
 
 puts "Welcome to pizza delivery company!"
@@ -30,5 +35,5 @@ choice = gets.chomp.to_i
     puts "||    _ (_)    '-."
     puts "||   (_)   __..-'"
     puts " \\__..--\"\""
-  end 
+  end
 end
