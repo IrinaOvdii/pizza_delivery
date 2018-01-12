@@ -2,7 +2,7 @@ require_relative "pizza.rb"
 
 class Menu
   attr_accessor :pizzas
-  def initializer
+  def initialize
     @pizzas = []
     @pizzas << Pizza.new(101, "Verdure", "Homemade grilled vegetables and fresh mushrooms on tomato sauce and mozzarella.", 9)
     @pizzas << Pizza.new(102, "Margherita", "Homemade tomato sauce and mozzarella.", 8)
@@ -14,10 +14,17 @@ class Menu
 
   def print
     puts "We have on our menu: "
-    
+
     @pizzas.each do |pizza|
-      puts "#{pizza.number}: #{pizza.name}  -  #{pizza.ingredients}"
+      puts "#{pizza.number}: #{pizza.name} - #{pizza.ingredients}"
     end
+  end
+
+  def make_choice
+    puts "Which one would you like?"
+    pizza_number = gets.chomp.to_i
+
+    @pizzas.find { |pizza| pizza.number == pizza_number }
   end
 
 
